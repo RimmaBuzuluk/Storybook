@@ -1,0 +1,56 @@
+.feedback-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 16px;
+  color: white;
+  font-weight: 500;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  box-shadow: 0 6px 16px rgba(255, 105, 180, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+.feedback-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+.feedback-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.feedback-success {
+  background-color: rgb(14, 96, 14);
+}
+
+.feedback-error {
+  background-color: rgb(167, 18, 18);
+}
+
+.feedback-info {
+  background-color: rgb(26, 26, 165);
+}
+
+.feedback-closeButton {
+  background: transparent;  
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.feedback-closeButton:hover {
+  transform: scale(1.1); 
+}
