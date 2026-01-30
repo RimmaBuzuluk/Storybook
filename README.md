@@ -4,7 +4,6 @@ Use Storybook components for previewing and testing.
 
 Склонуйте репозиторій:
 
-```bash
 git clone <your-repo-url>
 cd my-app
 
