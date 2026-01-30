@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "./Feedback.css";
+import "./Toast.css";
 
-export type FeedbackType = "success" | "error" | "info";
+export type ToastType = "success" | "error" | "info";
 
-type FeedbackProps = {
+type ToastProps = {
   message: string;
-  type?: FeedbackType;
+  type?: ToastType;
   duration?: number;
   onClose?: () => void;
   showCloseButton?: boolean;
 };
 
-export const Feedback: React.FC<FeedbackProps> = ({
+export const Toast: React.FC<ToastProps> = ({
   message,
   type = "info",
   duration = 3000,
@@ -39,14 +39,14 @@ export const Feedback: React.FC<FeedbackProps> = ({
   return (
     <div
       className={`
-        feedback-wrapper
-        feedback-${type}
-        ${visible ? "feedback-visible" : "feedback-hidden"}
+        toast-wrapper
+        toast-${type}
+        ${visible ? "toast-visible" : "toast-hidden"}
     `}
     >
       {message}
       {showCloseButton && (
-        <button onClick={handleClose} className="feedback-closeButton">
+        <button onClick={handleClose} className="toast-closeButton">
           ❌
         </button>
       )}

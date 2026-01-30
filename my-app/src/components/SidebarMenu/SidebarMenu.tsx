@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./Navigation.css";
+import "./SidebarMenu.css";
 import type React from "react";
 
 export type MenuItems = {
@@ -7,13 +7,13 @@ export type MenuItems = {
   submenu?: MenuItems[];
 };
 
-type NavigationProps = {
+type SidebarMenuProps = {
   items: MenuItems[];
   isOpen: boolean;
   onClose?: () => void;
 };
 
-export const Navigation: React.FC<NavigationProps> = ({
+export const SidebarMenu: React.FC<SidebarMenuProps> = ({
   items,
   onClose,
   isOpen,
@@ -44,8 +44,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   };
   return (
     <>
-      <div className={`navigation-overlay ${isOpen ? "visible" : ""}`}> </div>
-      <div className={`navigation-menu ${isOpen ? "open" : ""}`} ref={menuRef}>
+      <div className={`sidebarMenu-overlay ${isOpen ? "visible" : ""}`}> </div>
+      <div className={`sidebarMenu-menu ${isOpen ? "open" : ""}`} ref={menuRef}>
         <ul>
           {items.map((item, index) => (
             <li key={index}>

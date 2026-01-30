@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Navigation } from "./Navigation";
+import { SidebarMenu } from "./SidebarMenu";
 import { useArgs } from "storybook/internal/preview-api";
-import "./Navigation.css";
+import "./SidebarMenu.css";
 
-const meta: Meta<typeof Navigation> = {
-  title: "Components/Navigation",
-  component: Navigation,
+const meta: Meta<typeof SidebarMenu> = {
+  title: "Components/SidebarMenu",
+  component: SidebarMenu,
   argTypes: {
     isOpen: { control: "boolean" },
     items: { control: "object" },
@@ -14,7 +14,7 @@ const meta: Meta<typeof Navigation> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Navigation>;
+type Story = StoryObj<typeof SidebarMenu>;
 
 export const OneLevel: Story = {
   args: {
@@ -28,13 +28,13 @@ export const OneLevel: Story = {
     return (
       <>
         <button
-          className="navigation-openButton"
+          className="sidebarMenu-openButton"
           onClick={() => updateArgs({ isOpen: true })}
         >
           Open Menu
         </button>
 
-        <Navigation
+        <SidebarMenu
           {...args}
           isOpen={isOpen}
           onClose={() => updateArgs({ isOpen: false })}
@@ -63,13 +63,13 @@ export const TwoLevel: Story = {
     return (
       <>
         <button
-          className="navigation-openButton"
+          className="sidebarMenu-openButton"
           onClick={() => updateArgs({ isOpen: true })}
         >
           Open Menu
         </button>
 
-        <Navigation
+        <SidebarMenu
           {...args}
           isOpen={isOpen}
           onClose={() => updateArgs({ isOpen: false })}

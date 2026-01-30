@@ -1,4 +1,4 @@
-.feedback-wrapper {
+.toast-wrapper {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -17,30 +17,30 @@
   align-items: center;
 }
 
-.feedback-visible {
+.toast-visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0px);
 }
 
-.feedback-hidden {
+.toast-hidden {
   opacity: 0;
   transform: translateY(20px);
 }
 
-.feedback-success {
+.toast-success {
   background-color: rgb(14, 96, 14);
 }
 
-.feedback-error {
+.toast-error {
   background-color: rgb(167, 18, 18);
 }
 
-.feedback-info {
+.toast-info {
   background-color: rgb(26, 26, 165);
 }
 
-.feedback-closeButton {
+.toast-closeButton {
   background: transparent;
   margin-left: 10px;
   border: none;
@@ -51,6 +51,6 @@
   transition: transform 0.2s ease;
 }
 
-.feedback-closeButton:hover {
+.toast-closeButton:hover {
   transform: scale(1.1);
 }

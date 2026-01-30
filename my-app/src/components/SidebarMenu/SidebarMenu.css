@@ -1,4 +1,4 @@
-.navigation-overlay {
+.sidebarMenu-overlay {
   position: fixed;
   inset: 0;
   background: rgba(255, 105, 180, 0.45);
@@ -10,12 +10,12 @@
 li {
   list-style: none;
 }
-.navigation-overlay.visible {
+.sidebarMenu-overlay.visible {
   opacity: 1;
   pointer-events: auto;
 }
 
-.navigation-menu {
+.sidebarMenu-menu {
   position: fixed;
   top: 0;
   right: -320px;
@@ -30,7 +30,7 @@ li {
   border-left: 3px solid #ff4fa3;
 }
 
-.navigation-menu.open {
+.sidebarMenu-menu.open {
   right: 0;
 }
 
@@ -82,7 +82,7 @@ li {
   transform: translateX(-2px);
 }
 
-.navigation-openButton {
+.sidebarMenu-openButton {
   padding: 10px 20px;
   border: 2px solid #f4b6c2;
   border-radius: 14px;
@@ -96,12 +96,12 @@ li {
   outline: none;
 }
 
-.navigation-openButton:hover {
+.sidebarMenu-openButton:hover {
   border-color: #ff8fb1;
   box-shadow: 0 0 0 3px rgba(255, 143, 177, 0.25);
   background: linear-gradient(180deg, #ffe4ec, #fff0f7);
 }
 
-.navigation-openButton:active {
+.sidebarMenu-openButton:active {
   transform: scale(0.97);
 }

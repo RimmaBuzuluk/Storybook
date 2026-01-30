@@ -38,3 +38,57 @@
   font-size: 14px;
   margin-left: 4px;
 }
+
+.form-wrapper {
+  background: linear-gradient(180deg, #ffe4ec, #fff0f7);
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.35);
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-title {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #ff4fa3;
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #a50061;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.submit-button {
+  margin-top: 12px;
+  background: linear-gradient(180deg, #ff5fa2, #ff87c3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 79, 163, 0.35);
+  transition: all 0.25s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(180deg, #ff87c3, #ff5fa2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 79, 163, 0.45);
+}
