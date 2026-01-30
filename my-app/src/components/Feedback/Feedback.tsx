@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import "./Feedback.css"
+import React, { useEffect, useState } from "react";
+import "./Feedback.css";
 
-export type FeedbackType = 'success' | 'error' | 'info';
+export type FeedbackType = "success" | "error" | "info";
 
 type FeedbackProps = {
   message: string;
@@ -13,7 +13,7 @@ type FeedbackProps = {
 
 export const Feedback: React.FC<FeedbackProps> = ({
   message,
-  type = 'info',
+  type = "info",
   duration = 3000,
   onClose,
   showCloseButton = false,
@@ -38,18 +38,15 @@ export const Feedback: React.FC<FeedbackProps> = ({
 
   return (
     <div
-    className={`
+      className={`
         feedback-wrapper
         feedback-${type}
-        ${visible ? 'feedback-visible' : 'feedback-hidden'}
+        ${visible ? "feedback-visible" : "feedback-hidden"}
     `}
     >
       {message}
       {showCloseButton && (
-        <button
-          onClick={handleClose}
-          className='feedback-closeButton'
-        >
+        <button onClick={handleClose} className="feedback-closeButton">
           ❌
         </button>
       )}

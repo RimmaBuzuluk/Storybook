@@ -6,7 +6,7 @@
   border-radius: 16px;
   color: white;
   font-weight: 500;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   transition: all 0.3s ease;
   opacity: 0;
@@ -41,7 +41,7 @@
 }
 
 .feedback-closeButton {
-  background: transparent;  
+  background: transparent;
   margin-left: 10px;
   border: none;
   cursor: pointer;
@@ -52,5 +52,5 @@
 }
 
 .feedback-closeButton:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }

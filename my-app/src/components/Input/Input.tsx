@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
-import './Input.css';
+import React, { useState } from "react";
+import "./Input.css";
 
 type InputProps = {
-  type?: 'text' | 'password' | 'number';
+  type?: "text" | "password" | "number";
   placeholder?: string;
   clearable?: boolean;
   onChange?: (value: string) => void;
 };
 
 export const Input: React.FC<InputProps> = ({
-  type = 'text',
-  placeholder = '',
+  type = "text",
+  placeholder = "",
   onChange,
   clearable = false,
 }) => {
-  const isPassword = type === 'password';
+  const isPassword = type === "password";
   const [showPassword, setShowPassword] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-
-
+  const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -26,20 +24,19 @@ export const Input: React.FC<InputProps> = ({
   };
 
   const inputClear = () => {
-    setInputValue('');
-    onChange?.('');
+    setInputValue("");
+    onChange?.("");
   };
 
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
   };
 
-
   return (
     <div className="input-wrapper">
       <input
         className="input-field"
-        type={isPassword && showPassword ? 'text' : type}
+        type={isPassword && showPassword ? "text" : type}
         value={inputValue}
         placeholder={placeholder}
         onChange={handleChange}
