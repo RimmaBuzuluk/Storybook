@@ -1,4 +1,21 @@
 # Storybook
+This project contains a collection of React components available through Storybook.
+Use Storybook components for previewing and testing.
+
+Склонуйте репозиторій:
+
+```bash
+git clone <your-repo-url>
+cd my-app
+
+Встановіть залежності:
+npm install
+
+Запустіть Storybook, щоб переглянути компоненти:
+npm run storybook
+
+
+
 INPUT
 defoult
 <img width="1466" height="811" alt="Знімок екрана 2026-01-30 о 18 49 29" src="https://github.com/user-attachments/assets/88e09ab0-3a6b-4ece-9445-a045e5d51cb6" />
@@ -34,3 +51,8 @@ ony level
 
 two level
 <img width="1467" height="774" alt="Знімок екрана 2026-01-30 о 19 09 52" src="https://github.com/user-attachments/assets/d923b583-029b-465f-938c-b0258a9d74e8" />
+
+
+FORM
+<img width="1151" height="478" alt="Знімок екрана 2026-01-30 о 20 07 36" src="https://github.com/user-attachments/assets/cee7336b-e565-458d-8bb3-a53528504e70" />
+
