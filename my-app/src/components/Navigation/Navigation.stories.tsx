@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Navigation, type MenuItems } from './Navigation';
-import { useEffect, useState } from 'react';
-import './Navigation.css'
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Navigation } from "./Navigation";
+import { useArgs } from "storybook/internal/preview-api";
+import "./Navigation.css";
 
 const meta: Meta<typeof Navigation> = {
-  title: 'Components/Navigation',
+  title: "Components/Navigation",
   component: Navigation,
   argTypes: {
-    isOpen: { control: 'boolean' },
-    items: { control: 'object' },  
+    isOpen: { control: "boolean" },
+    items: { control: "object" },
   },
 };
 
@@ -16,56 +16,65 @@ export default meta;
 
 type Story = StoryObj<typeof Navigation>;
 
-const Template = (args: { items: MenuItems[]; isOpen: boolean }) => {
-  const [open, setOpen] = useState(args.isOpen);
-
-  useEffect(() => {
-    setOpen(args.isOpen);
-  }, [args.isOpen]);
-
-  const handleClose = () => setOpen(false);
-  const handleOpen = () => setOpen(true);
-
-  return (
-    <>
-      <button onClick={handleOpen} className='navigation-openButton'>
-        Open Menu
-      </button>
-      <Navigation {...args} isOpen={open} onClose={handleClose} />
-    </>
-  );
-};
-
-
-
-
 export const OneLevel: Story = {
-  render: (args) => <Template {...args} />,
   args: {
-    isOpen: false, 
-    items: [
-      { label: 'Home' },
-      { label: 'About' },
-      { label: 'Contact' },
-    ],
+    isOpen: false,
+    items: [{ label: "Home" }, { label: "About" }, { label: "Contact" }],
+  },
+
+  render: (args) => {
+    const [{ isOpen }, updateArgs] = useArgs();
+
+    return (
+      <>
+        <button
+          className="navigation-openButton"
+          onClick={() => updateArgs({ isOpen: true })}
+        >
+          Open Menu
+        </button>
+
+        <Navigation
+          {...args}
+          isOpen={isOpen}
+          onClose={() => updateArgs({ isOpen: false })}
+        />
+      </>
+    );
   },
 };
 
 export const TwoLevel: Story = {
-  render: (args) => <Template {...args} />,
   args: {
     isOpen: false,
     items: [
-      { label: 'Home' },
+      { label: "Home" },
       {
-        label: 'Services',
-        submenu: [
-          { label: 'Web Development' },
-          { label: 'Mobile Apps' },
-        ],
+        label: "Services",
+        submenu: [{ label: "Web Development" }, { label: "Mobile Apps" }],
       },
-      { label: 'Contact' },
+      { label: "Contact" },
     ],
   },
-};
 
+  render: (args) => {
+    const [{ isOpen }, updateArgs] = useArgs();
+
+    return (
+      <>
+        <button
+          className="navigation-openButton"
+          onClick={() => updateArgs({ isOpen: true })}
+        >
+          Open Menu
+        </button>
+
+        <Navigation
+          {...args}
+          isOpen={isOpen}
+          onClose={() => updateArgs({ isOpen: false })}
+        />
+      </>
+    );
+  },
+};
